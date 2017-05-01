@@ -1,0 +1,12 @@
+apache:
+  build: ./apache-php7
+  ports:
+    - "80:80"
+    - "443:433"
+  volumes:
+    - ./magento/2.1.6/store:/var/www/html
+
+db:
+  build: ./MySQL/5.7
+  ports:
+    - 3306
