@@ -34,4 +34,3 @@ while getopts "hesxiv:" optname; do
   esac
 done
 cd magento/$VERSION/compressed && tar -zxvf Magento-CE-2.1.6.tar.gz -C ../store
-chmod -R -777 magento

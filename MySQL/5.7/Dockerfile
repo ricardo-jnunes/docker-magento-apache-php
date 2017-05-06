@@ -67,8 +67,13 @@ RUN sed -Ei 's/^(bind-address|log)/#&/' /etc/mysql/mysql.conf.d/mysqld.cnf \
 
 VOLUME /var/lib/mysql
 
+COPY createUserAndDBMagento.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/createUserAndDBMagento.sh
+RUN ln -s usr/local/bin/createUserAndDBMagento.sh /createUserAndDBMagento.sh
+
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 3306

@@ -1,3 +1,12 @@
+db:
+  build: ./MySQL/5.7
+  ports:
+    - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=root4321  
+  volumes:
+    - ./MySQL/5.7/volumes:/var/lib/mysql
+
 apache:
   build: ./apache-php7
   ports:
@@ -5,8 +14,5 @@ apache:
     - "443:433"
   volumes:
     - ./magento/2.1.6/store:/var/www/html
-
-db:
-  build: ./MySQL/5.7
-  ports:
-    - 3306
+  links:
+    - db
