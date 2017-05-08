@@ -5,7 +5,7 @@ db:
   environment:
     - MYSQL_ROOT_PASSWORD=root4321  
   volumes:
-    - ./MySQL/5.7/volumes:/var/lib/mysql
+    - ./MySQL/5.7/volumes/data:/var/lib/mysql
 
 apache:
   build: ./apache-php7
