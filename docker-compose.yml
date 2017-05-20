@@ -3,7 +3,7 @@ db:
   ports:
     - "3306:3306"
   environment:
-    - MYSQL_ROOT_PASSWORD=root4321  
+    - MYSQL_ROOT_PASSWORD=root1234
   volumes:
     - ./MySQL/5.7/volumes/data:/var/lib/mysql
 

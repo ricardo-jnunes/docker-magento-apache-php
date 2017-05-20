@@ -11,6 +11,11 @@ RUN apt-get update && apt-get install -y \
 		libfreetype6-dev libjpeg62-turbo-dev libpng12-dev \
 	--no-install-recommends && rm -r /var/lib/apt/lists/*
 
+# Install VIM, if we needed
+RUN apt-get update && apt-get install -y \
+		vim \
+	--no-install-recommends && rm -r /var/lib/apt/lists/*
+
 # Install mcrypt
 RUN docker-php-ext-install mcrypt
 
