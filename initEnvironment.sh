@@ -29,8 +29,11 @@ while getopts "hesxiv:" optname; do
       ;;
     *)
     # Should not occur
-      echo "Unknown error while processing options inside installMagento.sh"
+    echo "Unknown error while processing options inside initEnvironment.sh"
       ;;
   esac
 done
+if [ ! -d MySQL/volumes/data ]; then
+  mkdir -p MySQL/volumes/data;
+fi
 cd magento/$VERSION/compressed && tar -zxvf Magento-CE-2.1.6.tar.gz -C ../store
